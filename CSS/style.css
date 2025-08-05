@@ -427,12 +427,8 @@ main {
 }
 
 .btn-group button:hover {
-  outline: none !important;
   box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
   background-image: linear-gradient(to bottom right, #00adb5 90%, white);
-}
-.btn-group button:focus{
-  outline: none !important;
 }
   
 /* ............................................................................................... */
@@ -652,13 +648,11 @@ main {
 
 .contact form .i-p input:focus,
 .contact form .i-p textarea :focus {
-  outline: none !important;
   background-color: #2e333c;
 }
 
 .contact form .i-p input:hover,
 .contact form .i-p textarea:hover {
-  outline: none !important;
   border: 3px solid #6020c9;
   box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
   transform: scale(1.1) translateY(-1px);
@@ -700,6 +694,7 @@ main {
 /* ............................................................................................................... */
 
 /* ............................................................................................................... */
+
 
 
 
