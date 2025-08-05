@@ -428,7 +428,7 @@ main {
 
 .btn-group button:hover {
   outline: none !important;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 !important;
+  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
   background-image: linear-gradient(to bottom right, #00adb5 90%, white);
 }
 .btn-group button:focus{
@@ -660,7 +660,7 @@ main {
 .contact form .i-p textarea:hover {
   outline: none !important;
   border: 3px solid #6020c9;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 !important;
+  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
   transform: scale(1.1) translateY(-1px);
 }
 
@@ -700,6 +700,7 @@ main {
 /* ............................................................................................................... */
 
 /* ............................................................................................................... */
+
 
 
 
