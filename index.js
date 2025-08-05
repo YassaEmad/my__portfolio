@@ -2,7 +2,7 @@ const navLinks = document.querySelectorAll('.navbar a');
 
 navLinks.forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault(); // يمنع الرابط من التصرف الافتراضي
+    e.preventDefault(); 
 
     const targetId = this.getAttribute('data-target');
     const targetSection = document.getElementById(targetId);
@@ -28,7 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ✅ لما تضغطي على أي زر، خليه هو الـ active واعرض قسمه
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     buttons.forEach(btn => btn.classList.remove('active'));
@@ -40,6 +39,7 @@ buttons.forEach(button => {
     });
   });
 });
+
 
 
 
