@@ -17,26 +17,30 @@ navLinks.forEach(link => {
 const buttons = document.querySelectorAll('.btn');
 const sections = document.querySelectorAll('.all section');
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    // Remove 'active' from all buttons
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    // Add 'active' to the clicked button
-    button.classList.add('active');
-
-    // Get the target section from data-target attribute
-    const targetId = button.getAttribute('data-target');
+window.addEventListener('DOMContentLoaded', () => {
+  const activeButton = document.querySelector('.btn.active');
+  if (activeButton) {
+    const targetId = activeButton.getAttribute('data-target');
 
     sections.forEach(section => {
-      if (section.id === targetId) {
-        section.style.display = 'grid'; // show target
-      } else {
-        section.style.display = 'none'; // hide others
-      }
+      section.style.display = (section.id === targetId) ? 'grid' : 'none';
+    });
+  }
+});
+
+// ✅ لما تضغطي على أي زر، خليه هو الـ active واعرض قسمه
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    buttons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const targetId = button.getAttribute('data-target');
+    sections.forEach(section => {
+      section.style.display = (section.id === targetId) ? 'grid' : 'none';
     });
   });
 });
+
 
 
 
