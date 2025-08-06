@@ -201,9 +201,21 @@ main {
   width: 60px;
   height: 60px;
   background-color: #2e333c;
+  position: relative;
+  z-index: 0;
+}
+
+.home_section ul li::after {
+  content: '';
+  position: absolute;
+  width: 102%;
+  height: 100%;
+  border-radius: 50%;
   border: 3px solid #00adb5;
   border-left: 3px solid transparent;
   animation: spin 3s linear infinite;
+  z-index: -1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 @keyframes spin {
@@ -217,7 +229,7 @@ main {
 
 }
 
-.home_section ul li:hover {
+.home_section ul li:hover::after {
   animation-play-state: paused;
   border: 3px solid #00adb5;
   box-shadow: 0px 0 80px #00adb5, 0px 0 80px #222831;
@@ -684,7 +696,206 @@ main {
 /* end sec_contact */
 /* ............................................................................................................... */
 
+/* ............................................................................................................... */}
+
+.stack img {
+  width: 60px;
+}
+
+.stack p {
+  color: white;
+  text-align: center;
+}
+/* ............................................................................................... */
+.certificates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.ph {
+  display: flex;
+  align-items: center;
+  border: 3px solid #00adb5;
+  transition: all 0.5s linear;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+.ph:hover {
+  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  transform: scale(1.5) translateY(-1px);
+}
+
+.certificates img {
+  width: 250px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .certificates {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .certificates img {
+    width: 100px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+}
+
+#projects,
+#certificates,
+#stacks{
+  display: none;
+}
+
+#stacks {
+  display: grid;
+}
+.btn.active {
+  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
+  color: white;
+  border: 3px solid #00adb5 !important;
+}
+/* end sec_portfolio */
 /* ............................................................................................................... */
+/* start sec_contact */
+.contact {
+  grid-column: 2/14;
+  margin: 80px auto 0px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#222831, #222831),
+      linear-gradient(to bottom right, #00adb5 90%, white);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: all 0.3s linear;
+  box-sizing: border-box;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.contact:hover {
+  border-radius: 30px;
+  border: 4px solid transparent;
+  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
+}
+
+.contact h1 {
+  font-size: 56px;
+  background-image: linear-gradient(to bottom right, #00adb5 60%, white);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .................................................................................................. */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+
+}
+
+.contact .i-p {
+  grid-column: 3/11;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.5fr 1fr;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.contact form .i-p input,
+.contact form .i-p textarea {
+  justify-content: center;
+  align-items: center;
+  background-color: #2e333c;
+  border: none;
+  border-radius: 10px;
+  min-height: 50px;
+  width: 100%;
+  grid-column: 3/11;
+  grid-row: 2;
+  color: white;
+  transition: all 0.3s linear 0.2s;
+
+}
+
+.contact form .i-p input:focus,
+.contact form .i-p textarea :focus {
+  background-color: #2e333c;
+}
+
+.contact form .i-p input:hover,
+.contact form .i-p textarea:hover {
+  border: 3px solid #00adb5 !important;
+  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
+  transform: scale(1.1) translateY(-1px);
+}
+
+.contact form .i-p label {
+  color: white;
+  grid-column: 3/5;
+  grid-row: 1;
+}
+
+@media (max-width: 992px) {
+  .contact form .i-p label {
+    color: white;
+    grid-column: 3/10;
+    grid-row: 1;
+  }
+}
+
+.sentt {
+  margin-top: 5px;
+  grid-row: 1/3;
+  grid-column: 3/11;
+  background-color: #2e333c;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s linear 0.2s;
+  border: none;
+}
+
+.sentt:hover {
+  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  transform: scale(1.05) translateY(-1px);
+  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
+
+}
+/* end sec_contact */
+/* ............................................................................................................... */
+
+/* ............................................................................................................... */
+
 
 
 
