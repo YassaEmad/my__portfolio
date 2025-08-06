@@ -1,12 +1,19 @@
+:root {
+  --color_bg: #222831;
+  --color_card: #2e333c;
+  --color_primary: #00adb5;
+  --color_white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
   font-family: 'Work Sans', sans-serif;
-  background-color: #222831;
+  background-color: var(--color_bg);
 }
 /* start navbar */
 .navbar {
@@ -14,7 +21,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   align-items: center;
-  color: white;
+  color: var(--color_white);
   position: relative;
   padding-bottom: 20px;
 }
@@ -24,7 +31,7 @@ body {
   content: '';
   width: 100vw;
   height: 3px;
-  background-image: linear-gradient(to bottom right, #00adb5, #00adb5);
+  background-image: linear-gradient(to bottom right, var(--color_primary), var(--color_primary));
   bottom: 0;
   left: 0;
 }
@@ -33,7 +40,7 @@ body {
   padding: 10px;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(to bottom right, #00adb5 60%, white);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 60%, var(--color_white));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 30px;
@@ -45,7 +52,7 @@ body {
 }
 
 .icon-bot {
-  background-image: linear-gradient(to bottom right, #00adb5 60%, white);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 60%, var(--color_white));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -57,7 +64,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  .navbar-nav{
+  .navbar-nav {
     margin-left: -70px;
   }
 }
@@ -73,7 +80,7 @@ body {
   padding: 5px;
   position: relative;
   transition: 0.3s;
-  background-color: #2e333c;
+  background-color: var(--color_card);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,14 +92,14 @@ body {
   width: 103%;
   height: 108%;
   border-radius: 30px;
-  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 99%, var(--color_white));
   z-index: -1;
 }
 
 @media (max-width: 992px) {
   .navbar-nav .nav-item {
-      padding: 0px;
-    }
+    padding: 0px;
+  }
 
   .navbar-nav .nav-item::after {
     width: 101%;
@@ -102,13 +109,13 @@ body {
 
 .navbar-nav .nav-item:hover {
   z-index: 0;
-  box-shadow: 0px 0 30px #00adb5, 0px 0 30px #222831;
+  box-shadow: 0px 0 30px var(--color_primary), 0px 0 30px var(--color_bg);
 }
 
 .navbar-nav .nav-link {
   font-size: 18px;
   text-decoration: none;
-  color: white;
+  color: var(--color_white);
 }
 .navbar-toggler-icon {
   filter: invert(1);
@@ -118,7 +125,7 @@ body {
   box-shadow: none !important;
   background: transparent !important;
 }
-/*end navbar*/
+/* end navbar */
 /* ............................................................................................................... */
 main {
   display: grid;
@@ -137,8 +144,8 @@ main {
   justify-content: center;
   border-radius: 30px;
   border: 2px solid transparent;
-   background-image: linear-gradient(#222831, #222831),
-    linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(var(--color_bg), var(--color_bg)),
+    linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   transition: all 0.3s linear;
@@ -151,23 +158,22 @@ main {
 .home_section:hover {
   border-radius: 30px;
   border: 4px solid transparent;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
 }
 
 .home_section h1 {
   font-size: clamp(30px, 4vw, 3.5rem);
-  background-image: linear-gradient(to bottom right, #00adb5 60%, #222831);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 60%, var(--color_bg));
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
 
 .home_section p {
-  color: white;
+  color: var(--color_white);
   line-height: 2.5;
   text-align: center;
   max-width: 80ch;
-
 }
 @media (max-width: 768px) {
   .home_section p {
@@ -200,7 +206,7 @@ main {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  background-color: #2e333c;
+  background-color: var(--color_card);
   position: relative;
   z-index: 0;
 }
@@ -211,7 +217,7 @@ main {
   width: 102%;
   height: 100%;
   border-radius: 50%;
-  border: 3px solid #00adb5;
+  border: 3px solid var(--color_primary);
   border-left: 3px solid transparent;
   animation: spin 3s linear infinite;
   z-index: -1;
@@ -220,24 +226,23 @@ main {
 
 @keyframes spin {
   0% {
-    transform: rotate (0deg);
+    transform: rotate(0deg);
   }
 
   100% {
     transform: rotate(360deg);
   }
-
 }
 
 .home_section ul li:hover::after {
   animation-play-state: paused;
-  border: 3px solid #00adb5;
-  box-shadow: 0px 0 80px #00adb5, 0px 0 80px #222831;
+  border: 3px solid var(--color_primary);
+  box-shadow: 0px 0 80px var(--color_primary), 0px 0 80px var(--color_bg);
   transform: scale(1.1) translateY(-1px);
 }
 
 .home_section ul li a {
-  color: white;
+  color: var(--color_white);
   font-size: 20px;
 }
 /* end sec_home */
@@ -254,8 +259,8 @@ main {
   justify-content: center;
   border-radius: 30px;
   border: 2px solid transparent;
-  background-image: linear-gradient(#222831, #222831),
-      linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(var(--color_bg), var(--color_bg)),
+    linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   transition: all 0.3s linear;
@@ -263,18 +268,17 @@ main {
   height: auto;
   overflow: hidden;
   padding-bottom: 40px;
-  
 }
 
 .about:hover {
   border-radius: 30px;
   border: 4px solid transparent;
-  box-shadow: 0px 0 10px #00adb5,0px 0 10px #222831;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
 }
 
 .about h1 {
   font-size: 56px;
-  background-image: linear-gradient(to bottom right, #00adb5 60%, #222831);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 60%, var(--color_bg));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -307,19 +311,19 @@ main {
 }
 
 .bottom .right .prif h2 {
-  color: white;
+  color: var(--color_white);
   font-size: 25px;
 }
 
 .bottom .right .prif span {
   font-size: 20px;
-  background-image: linear-gradient(to right, #00adb5 60%, white);
+  background-image: linear-gradient(to right, var(--color_primary) 60%, var(--color_white));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bottom .right p {
-  color: white;
+  color: var(--color_white);
   opacity: 0.9;
   line-height: 2;
   font-size: 16px;
@@ -329,7 +333,6 @@ main {
 @media (max-width: 768px) {
   .bottom .right {
     max-width: 90%;
-
   }
 }
 
@@ -341,43 +344,40 @@ main {
   position: relative;
   z-index: 0;
   transition: transform 0.3s ease-in-out 0.2s;
-  border: 5px solid #00adb5;
+  border: 5px solid var(--color_primary);
 }
 
 @media (max-width: 768px) {
   /* .about {
-        width: 60%;
-    } */
+  width: 60%;
+} */
 }
 
 .about img:hover {
-
-  box-shadow: 0px 0 80px #00adb5, 0px 0 80px #222831;
+  box-shadow: 0px 0 80px var(--color_primary), 0px 0 80px var(--color_bg);
   transform: scale(1.1) translateY(-1px);
-
 }
 
 .bottom .right .cv {
   display: flex;
   gap: 5px;
-  color: white;
+  color: var(--color_white);
   font-size: 20px;
   padding: 10px;
   width: 180px;
   border-radius: 25px;
-  background-image: linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   transition: transform 0.3s ease-in-out 0.2s;
 }
 
 .bottom .right .cv:hover {
-  box-shadow: 0px 0 50px #00adb5, 0px 0 50px #222831;
+  box-shadow: 0px 0 50px var(--color_primary), 0px 0 50px var(--color_bg);
   transform: scale(1.1) translateY(-1px);
 }
 
 .bottom .right .cv a {
-  color: white;
+  color: var(--color_white);
   text-decoration: none;
-
 }
 
 @media (max-width: 900px) {
@@ -416,23 +416,22 @@ main {
 .btn-group button {
   border-radius: 80px;
   transition: all 0.3s linear;
-  background-color: #2e333c;
+  background-color: var(--color_card);
   border: none;
   border: 3px solid transparent;
-  background-image: linear-gradient(#222831, #222831),
-      linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(var(--color_bg), var(--color_bg)),
+    linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   background-origin: border-box;
   background-clip: padding-box, border-box;
-  color: white;
+  color: var(--color_white);
 }
 
 .btn-group button:hover {
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
-  background-image: linear-gradient(to bottom right, #00adb5 90%, white);
-  border: 3px solid #00adb5 !important;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
+  border: 3px solid var(--color_primary) !important;
 }
 
-  
 /* ............................................................................................... */
 .all {
   grid-column: 2/14;
@@ -446,13 +445,13 @@ main {
   border-radius: 30px;
   border: none;
   transition: all 0.3s linear;
-  background-color: #2e333c;
+  background-color: var(--color_card);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
   border: 3px solid transparent;
-  background-image: linear-gradient(#222831, #222831),
-      linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(var(--color_bg), var(--color_bg)),
+    linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
@@ -460,7 +459,7 @@ main {
 .all:hover {
   border-radius: 30px;
   border: 4px solid transparent;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
 }
 
 /* ............................................................................................... */
@@ -481,22 +480,22 @@ main {
 }
 
 .stack {
-  background-color: #2e333c;
+  background-color: var(--color_card);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 15px;
   border: 3px solid transparent;
   border-radius: 10px;
-  background-image: linear-gradient(#2e333c, #2e333c),
-      linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(var(--color_card), var(--color_card)),
+    linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   transition: all 0.3s linear;
 }
 
 .stack:hover {
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
   transform: scale(1.05) translateY(-1px);
 }
 
@@ -505,7 +504,7 @@ main {
 }
 
 .stack p {
-  color: white;
+  color: var(--color_white);
   text-align: center;
 }
 /* ............................................................................................... */
@@ -515,23 +514,21 @@ main {
   gap: 20px;
   width: 100%;
   box-sizing: border-box;
-
 }
 
 .ph {
   display: flex;
   align-items: center;
-  border: 3px solid #00adb5;
+  border: 3px solid var(--color_primary);
   transition: all 0.5s linear;
   border-radius: 10px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-
 }
 
 .ph:hover {
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
   transform: scale(1.5) translateY(-1px);
 }
 
@@ -555,12 +552,11 @@ main {
     height: 100%;
     box-sizing: border-box;
   }
-
 }
 
 #projects,
 #certificates,
-#stacks{
+#stacks {
   display: none;
 }
 
@@ -568,9 +564,9 @@ main {
   display: grid;
 }
 .btn.active {
-  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
-  color: white;
-  border: 3px solid #00adb5 !important;
+  background-image: linear-gradient(to bottom right, var(--color_primary) 99%, var(--color_white));
+  color: var(--color_white);
+  border: 3px solid var(--color_primary) !important;
 }
 /* end sec_portfolio */
 /* ............................................................................................................... */
@@ -585,8 +581,8 @@ main {
   justify-content: center;
   border-radius: 30px;
   border: 2px solid transparent;
-  background-image: linear-gradient(#222831, #222831),
-      linear-gradient(to bottom right, #00adb5 90%, white);
+  background-image: linear-gradient(var(--color_bg), var(--color_bg)),
+    linear-gradient(to bottom right, var(--color_primary) 90%, var(--color_white));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   transition: all 0.3s linear;
@@ -600,12 +596,12 @@ main {
 .contact:hover {
   border-radius: 30px;
   border: 4px solid transparent;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
 }
 
 .contact h1 {
   font-size: 56px;
-  background-image: linear-gradient(to bottom right, #00adb5 60%, white);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 60%, var(--color_white));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -618,7 +614,6 @@ main {
   align-items: center;
   gap: 15px;
   width: 100%;
-
 }
 
 .contact .i-p {
@@ -637,39 +632,38 @@ main {
 .contact form .i-p textarea {
   justify-content: center;
   align-items: center;
-  background-color: #2e333c;
+  background-color: var(--color_card);
   border: none;
   border-radius: 10px;
   min-height: 50px;
   width: 100%;
   grid-column: 3/11;
   grid-row: 2;
-  color: white;
+  color: var(--color_white);
   transition: all 0.3s linear 0.2s;
-
 }
 
 .contact form .i-p input:focus,
-.contact form .i-p textarea :focus {
-  background-color: #2e333c;
+.contact form .i-p textarea:focus {
+  background-color: var(--color_card);
 }
 
 .contact form .i-p input:hover,
 .contact form .i-p textarea:hover {
-  border: 3px solid #00adb5 !important;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
+  border: 3px solid var(--color_primary) !important;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
   transform: scale(1.1) translateY(-1px);
 }
 
 .contact form .i-p label {
-  color: white;
+  color: var(--color_white);
   grid-column: 3/5;
   grid-row: 1;
 }
 
 @media (max-width: 992px) {
   .contact form .i-p label {
-    color: white;
+    color: var(--color_white);
     grid-column: 3/10;
     grid-row: 1;
   }
@@ -679,234 +673,19 @@ main {
   margin-top: 5px;
   grid-row: 1/3;
   grid-column: 3/11;
-  background-color: #2e333c;
+  background-color: var(--color_card);
   padding: 20px;
-  color: white;
+  color: var(--color_white);
   border-radius: 10px;
   transition: all 0.3s linear 0.2s;
   border: none;
 }
 
 .sentt:hover {
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
+  box-shadow: 0px 0 10px var(--color_primary), 0px 0 10px var(--color_bg);
   transform: scale(1.05) translateY(-1px);
-  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
-
+  background-image: linear-gradient(to bottom right, var(--color_primary) 99%, var(--color_white));
 }
 /* end sec_contact */
 /* ............................................................................................................... */
-
-/* ............................................................................................................... */}
-
-.stack img {
-  width: 60px;
-}
-
-.stack p {
-  color: white;
-  text-align: center;
-}
-/* ............................................................................................... */
-.certificates {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  width: 100%;
-  box-sizing: border-box;
-
-}
-
-.ph {
-  display: flex;
-  align-items: center;
-  border: 3px solid #00adb5;
-  transition: all 0.5s linear;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-
-}
-
-.ph:hover {
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
-  transform: scale(1.5) translateY(-1px);
-}
-
-.certificates img {
-  width: 250px;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .certificates {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  .certificates img {
-    width: 100px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-  }
-
-}
-
-#projects,
-#certificates,
-#stacks{
-  display: none;
-}
-
-#stacks {
-  display: grid;
-}
-.btn.active {
-  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
-  color: white;
-  border: 3px solid #00adb5 !important;
-}
-/* end sec_portfolio */
-/* ............................................................................................................... */
-/* start sec_contact */
-.contact {
-  grid-column: 2/14;
-  margin: 80px auto 0px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30px;
-  border: 2px solid transparent;
-  background-image: linear-gradient(#222831, #222831),
-      linear-gradient(to bottom right, #00adb5 90%, white);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  transition: all 0.3s linear;
-  box-sizing: border-box;
-  height: auto;
-  overflow: hidden;
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-.contact:hover {
-  border-radius: 30px;
-  border: 4px solid transparent;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
-}
-
-.contact h1 {
-  font-size: 56px;
-  background-image: linear-gradient(to bottom right, #00adb5 60%, white);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* .................................................................................................. */
-.contact form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  width: 100%;
-
-}
-
-.contact .i-p {
-  grid-column: 3/11;
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 0.5fr 1fr;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.contact form .i-p input,
-.contact form .i-p textarea {
-  justify-content: center;
-  align-items: center;
-  background-color: #2e333c;
-  border: none;
-  border-radius: 10px;
-  min-height: 50px;
-  width: 100%;
-  grid-column: 3/11;
-  grid-row: 2;
-  color: white;
-  transition: all 0.3s linear 0.2s;
-
-}
-
-.contact form .i-p input:focus,
-.contact form .i-p textarea :focus {
-  background-color: #2e333c;
-}
-
-.contact form .i-p input:hover,
-.contact form .i-p textarea:hover {
-  border: 3px solid #00adb5 !important;
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831 ;
-  transform: scale(1.1) translateY(-1px);
-}
-
-.contact form .i-p label {
-  color: white;
-  grid-column: 3/5;
-  grid-row: 1;
-}
-
-@media (max-width: 992px) {
-  .contact form .i-p label {
-    color: white;
-    grid-column: 3/10;
-    grid-row: 1;
-  }
-}
-
-.sentt {
-  margin-top: 5px;
-  grid-row: 1/3;
-  grid-column: 3/11;
-  background-color: #2e333c;
-  padding: 20px;
-  color: white;
-  border-radius: 10px;
-  transition: all 0.3s linear 0.2s;
-  border: none;
-}
-
-.sentt:hover {
-  box-shadow: 0px 0 10px #00adb5, 0px 0 10px #222831;
-  transform: scale(1.05) translateY(-1px);
-  background-image: linear-gradient(to bottom right, #00adb5 99%, white);
-
-}
-/* end sec_contact */
-/* ............................................................................................................... */
-
-/* ............................................................................................................... */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
