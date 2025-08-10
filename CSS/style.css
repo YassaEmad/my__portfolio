@@ -23,14 +23,15 @@ body {
   align-items: center;
   color: var(--color_white);
   padding-bottom: 20px;
-  position: fixed;
+  position: relative;
+  /*position: fixed;
   z-index: 1000;
   border-bottom: 3.5px solid var(--color_primary);
   width: 100vw;
-  background-color: var(--color_bg);
+  background-color: var(--color_bg);*/
 }
 
-/*.navbar::after {
+.navbar::after {
   position: absolute;
   content: '';
   width: 100vw;
@@ -38,7 +39,7 @@ body {
   background-image: linear-gradient(to bottom right, var(--color_primary), var(--color_primary));
   bottom: 0;
   left: 0;
-}*/
+}
 
 .navbar-brand {
   padding: 10px;
@@ -132,7 +133,7 @@ body {
 /* end navbar */
 /* ............................................................................................................... */
 main {
-  padding-top: 90px;
+  /*padding-top: 90px;*/
   display: grid;
   grid-template-columns: repeat(14, 1fr);
 }
@@ -796,6 +797,7 @@ main {
 }
 /* end sec_contact */
 /* ............................................................................................................... */
+
 
 
 
