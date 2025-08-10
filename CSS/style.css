@@ -25,7 +25,7 @@ body {
   padding-bottom: 20px;
   position: fixed;
   z-index: 1000;
-  border-bottom: 3 px solid #00adb5;
+  border-bottom: 3.5px solid var(--color_primary);
   width: 100vw;
   background-color: var(--color_bg);
 }
@@ -796,6 +796,7 @@ main {
 }
 /* end sec_contact */
 /* ............................................................................................................... */
+
 
 
 
