@@ -351,6 +351,21 @@ main {
   z-index: 0;
   transition: transform 0.3s ease-in-out 0.2s;
   border: 5px solid var(--color_primary);
+  animation: all 3s ease-in-out 0.5s infinite;
+}
+@keyframes all {
+  0% {
+    transform:  translateY(0px);
+  }
+
+  50% {
+    transform:  translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+  
 }
 
 @media (max-width: 768px) {
@@ -797,6 +812,7 @@ main {
 }
 /* end sec_contact */
 /* ............................................................................................................... */
+
 
 
 
