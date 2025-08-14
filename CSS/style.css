@@ -288,6 +288,12 @@ main {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: 50px;
+  }
+
+}
 
 .bottom {
   display: flex;
@@ -334,6 +340,17 @@ main {
   line-height: 2;
   font-size: 16px;
   word-spacing: 1.5;
+}
+@media (max-width: 768px) {
+  .bottom .right p ,
+  .bottom .right .prif h2,
+  .bottom .right .prif span{
+    text-align: left;
+    align-self: flex-start;
+  }
+   .bottom .right p {
+      width: 20ch;
+    }
 }
 
 @media (max-width: 768px) {
@@ -812,6 +829,7 @@ main {
 }
 /* end sec_contact */
 /* ............................................................................................................... */
+
 
 
 
