@@ -174,6 +174,35 @@ main {
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
+.wave{
+  font-size: clamp(30px, 4vw, 3.5rem);
+  background-image: linear-gradient(to bottom right, var(--color_primary) 60%, var(--color_bg));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  display: inline-block;
+  animation: wave 1s infinite alternate ease-in-out;
+}
+@keyframes wave {
+    from{
+      transform: translateY(0px);
+    } 
+    to{
+      transform: translateY(-10px);
+    } 
+}
+@media (max-width: 768px) {
+  @keyframes wave {
+      from {
+        transform: translateY(0px);
+      }
+  
+      to {
+        transform: translateY(-6px);
+      }
+    }
+
+}
 
 .home_section p {
   color: var(--color_white);
@@ -829,6 +858,7 @@ main {
   background-image: linear-gradient(to bottom right, var(--color_primary) 99%, var(--color_white));
 }
 /* end sec_contact */
+
 
 
 
